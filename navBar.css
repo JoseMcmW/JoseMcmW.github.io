@@ -1,0 +1,44 @@
+header {
+    margin: 0;
+    padding: 0;
+}
+
+header .navbar a {
+    font-size: 3em;
+    margin-top: 0.5em;
+    margin-left: 1em;
+}
+
+#navbarNav .navbar-nav .nav-item a {
+    font-size: 2em;
+}
+
+.navbar-nav {
+    align-items: center;
+}
+
+#navbarNav {
+    flex-grow: 0;
+    padding-right: 1em;
+}
+
+/* Yellow Line Style */
+#navbarNav ul li a::after {
+    position: absolute;
+    content: "";
+    background-color: #DAA520;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    transition: 0.3s ease all;
+  }
+
+  #navbarNav ul li a:hover {
+    color: #DAA520;
+    transition: 0.3s ease all;
+  }
+
+  #navbarNav ul li a:hover::after {
+    width: 100%;
+  }

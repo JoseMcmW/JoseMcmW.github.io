@@ -1,0 +1,14 @@
+.title-skills {
+    font-size: 5em;
+}
+
+.skillsImg {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.skillsImg img {
+    width: auto;
+    height: 10em;
+}
+

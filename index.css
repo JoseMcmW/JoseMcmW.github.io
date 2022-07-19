@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Bebas Neue', cursive;
+    color: #DAA520;
+    color: #151617;
+}
+
+body { 
+    min-height: 100vh;
+    min-width: 100%;
+}
+
+h1 h2 h3 {
+    font-family: 'Bebas Neue', cursive;
+}
+
+p {
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
