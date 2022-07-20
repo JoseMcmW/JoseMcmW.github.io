@@ -1,5 +1,5 @@
-.title-skills {
-    font-size: 5em;
+.skill-section {
+    background-color: #ededed;
 }
 
 .skillsImg {
@@ -14,7 +14,10 @@
 
 .text-icon-skill {
     font-size: 3em;
+    color: #DAA520;
+    font-weight: bold;
 
+    
 }
 
 .invisibleText {

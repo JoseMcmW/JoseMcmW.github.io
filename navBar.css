@@ -9,6 +9,10 @@ header .navbar a {
     margin-left: 1em;
 }
 
+.navbar {
+   background-color: #ededed; 
+}
+
 #navbarNav .navbar-nav .nav-item a {
     font-size: 2em;
 }
