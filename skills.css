@@ -4,11 +4,23 @@
 
 .skillsImg {
     text-align: center;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
 
 .skillsImg img {
     width: auto;
     height: 10em;
 }
+
+.text-icon-skill {
+    font-size: 3em;
+
+}
+
+.invisibleText {
+    visibility: hidden;
+}
+
+
+
 
