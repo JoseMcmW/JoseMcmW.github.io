@@ -1,11 +1,24 @@
+.contact-section {
+    background-color: #ededed;
+}
+
 .contact-info {
     text-align: center;
 }
 
 .contact-message {
+    display: flex;
+    align-items: center;
     text-align: center;
+    box-sizing: content-box;
 }
 
 .contact-message p {
     font-size: 2.5em;
+}
+
+.icons-contact img {
+    width: auto;
+    height: 3em;
+    margin: 1em 1em 1em 1em;
 }
