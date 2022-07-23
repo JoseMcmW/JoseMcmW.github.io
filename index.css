@@ -23,5 +23,6 @@ p {
 
 .title {
     font-size: 5em;
+    text-shadow: #606161 1.5px 1.5px 1px;
 }
 
