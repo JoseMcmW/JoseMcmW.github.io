@@ -3,10 +3,10 @@ header {
     padding: 0;
 }
 
-header .navbar a {
-    font-size: 3em;
-    margin-top: 0.5em;
-    margin-left: 1em;
+.navbar-brand img {
+    width: auto;
+    height: 3em;
+    margin-left: 2em;
 }
 
 .navbar {
