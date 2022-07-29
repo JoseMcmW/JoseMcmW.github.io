@@ -9,6 +9,7 @@
 
 .about-text p {
     font-size: 1.5em;
+    text-align: justify;
 }
 
 .about-text h1 {
