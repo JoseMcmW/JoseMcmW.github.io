@@ -23,12 +23,27 @@
     color: #DAA520;
 }
 
+#resetBtn {
+    width: 30%;
+    background-color: #151617 !important;
+    color: #b1b1b1;
+    position: relative;
+    left: 38%;
+    margin-left: 1em;
+    box-shadow: 0px 0px 10px 5px;
+}
+
+#resetBtn:hover {
+    border: solid 1px #b1b1b1;
+    color: #DAA520;
+}
+
 #button {
     width: 30%;
     background-color: #151617 !important;
     color: #b1b1b1;
     position: relative;
-    left: 70%;
+    left: 32%;
     box-shadow: 0px 0px 10px 5px;
 }
 
@@ -49,3 +64,6 @@
     }
 }
 
+i {
+    color: #DAA520;
+}
