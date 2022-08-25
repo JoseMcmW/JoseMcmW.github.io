@@ -9,6 +9,8 @@ const lastName = document.querySelector('#lastName');
 const email = document.querySelector('#email');
 const message = document.querySelector('#message');
 
+const er =/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
 eventListeners()
 function eventListeners () {
     document.addEventListener('DOMContentLoaded', iniciarApp);
@@ -29,20 +31,68 @@ function iniciarApp() {
 
 //Validate Inputs
 function validateForm (e) {
-    if(e.target.value.length <= 0){
-        showError('Todos los campos son obligatorios')
+    if(e.target.value.length > 0){
+        const error = document.querySelector('p .error');
+        if(error) {
+            error.remove();
+        }
+        e.target.classList.remove('border', 'border-danger', 'bg-danger', 'bg-opacity-10');
+        e.target.classList.add('border', 'border-success', 'bg-success', 'bg-opacity-10');
     } else {
-        console.log('Los campos fueron llenados exitosamente')
+        e.target.classList.remove('border', 'border-success', 'bg-success', 'bg-opacity-10');
+        e.target.classList.add('border', 'border-danger', 'bg-danger', 'bg-opacity-10');
+        showError('You must fill in all fields');
     }
+
+    //Mail Validation
+    if(e.target.type === 'email') {
+        
+        if(er.test(e.target.value)) {
+            const error = document.querySelector('p.error');
+            if(error) {
+                error.remove();
+            }
+    
+            e.target.classList.remove('border', 'border-danger', 'bg-danger', 'bg-opacity-10');
+            e.target.classList.add('border', 'border-success', 'bg-success', 'bg-opacity-10');
+        } else {
+            e.target.classList.remove('border', 'border-success', 'bg-success', 'bg-opacity-10');
+            e.target.classList.add('border', 'border-danger', 'bg-danger', 'bg-opacity-10');
+            showError('Email invalid.');
+        }
+    }
+
+    if(er.test(email.value) && userName.value !== '' && lastName.value !== '' && message.value !== '') {
+        btnSend.disabled = false;
+        btnSend.classList.remove('cursor-not-allowed', 'opacity-50');
+    }
+    
 }
 
 function showError(textError) {
     const messageError = document.createElement('p');
     messageError.textContent = textError;
-    messageError.classList.add('alert', 'alert-danger', 'text-center')
+    messageError.classList.add('alert', 'alert-danger', 'text-center', 'error')
 
     const errores = document.querySelectorAll('.error');
     if(errores.length === 0) {
         separator.appendChild(messageError);
     }
+}
+
+function sendMail () {
+    e.preventeDefault();
+
+//Show spinner
+    const spinner = document.querySelector('#spinner');
+    spinner.style.display = 'flex';
+
+    setTimeout(() => {
+        spinner.setyle.display = 'none';
+
+        const sendMessage = document.createElement('p');
+        sendMessage.textContent = 'El mensaje ha sido enviado';
+        sendMessage.classList.add('')
+
+    }, 3000);
 }
