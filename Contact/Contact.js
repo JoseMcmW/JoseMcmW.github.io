@@ -1,9 +1,9 @@
-//Variables
+
 const btnSend = document.querySelector('#button');
+const btnReset = document.querySelector('#resetBtn');
 const form = document.querySelector('#send-mail');
 const separator = document.querySelector('#separator')
 
-//Variables Inputs
 const userName = document.querySelector('#name');
 const lastName = document.querySelector('#lastName');
 const email = document.querySelector('#email');
@@ -15,23 +15,23 @@ eventListeners()
 function eventListeners() {
     document.addEventListener('DOMContentLoaded', iniciarApp);
 
-    //listener inputs
     userName.addEventListener('blur', validateForm);
     lastName.addEventListener('blur', validateForm);
     email.addEventListener('blur', validateForm);
     message.addEventListener('blur', validateForm);
 
-    form.addEventListener('submit', sendEmail)
+    form.addEventListener('submit', sendEmail);
+
+    btnReset.addEventListener('click', resetForm)
+    
 }
 
 //Functions
-//Disable Send Button
 function iniciarApp() {
     btnSend.disabled = true;
     btnSend.classList.add('cursor-not-allowed', 'opacity-50');
 }
 
-//Validate Inputs
 function validateForm (e) {
     if(e.target.value.length > 0){
         const error = document.querySelector('p .error');
@@ -43,10 +43,9 @@ function validateForm (e) {
     } else {
         e.target.classList.remove('border', 'border-success', 'bg-success', 'bg-opacity-10');
         e.target.classList.add('border', 'border-danger', 'bg-danger', 'bg-opacity-10');
-        showError('You must fill in all fields');
+        showError('You must fill in all fields.');
     }
 
-    //Mail Validation
     if(e.target.type === 'email') {
         
         if(er.test(e.target.value)) {
@@ -97,9 +96,21 @@ function sendEmail (e) {
 
         form.insertBefore(textSend, spinner);
 
+        setTimeout(() => {
+            textSend.remove();
+
+            resetForm();
+
+        }, 5000);
 
     }, 3000);
 }
 
+function resetForm (e) {
+    e.preventDefault();
+
+    form.reset();
+    iniciarApp();
+}
 
 
