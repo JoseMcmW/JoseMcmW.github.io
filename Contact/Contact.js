@@ -43,7 +43,7 @@ function validateForm (e) {
     } else {
         e.target.classList.remove('border', 'border-success', 'bg-success', 'bg-opacity-10');
         e.target.classList.add('border', 'border-danger', 'bg-danger', 'bg-opacity-10');
-        showError('You must fill in all fields.');
+        showError('All fields are mandatory.');
     }
 
     if(e.target.type === 'email') {
@@ -59,9 +59,10 @@ function validateForm (e) {
         } else {
             e.target.classList.remove('border', 'border-success', 'bg-success', 'bg-opacity-10');
             e.target.classList.add('border', 'border-danger', 'bg-danger', 'bg-opacity-10');
-            showError('Email invalid.');
+            showError('Invalid email.');
         }
     }
+
 
     if(er.test(email.value) && userName.value !== '' && lastName.value !== '' && message.value !== '') {
         btnSend.disabled = false;
@@ -71,15 +72,17 @@ function validateForm (e) {
 }
 
 function showError(textError) {
-    const messageError = document.createElement('p');
+    const messageError = document.createElement('p'); 
     messageError.textContent = textError;
-    messageError.classList.add('alert', 'alert-danger', 'text-center', 'error')
+    messageError.classList.add('alert', 'alert-danger', 'text-center', 'fs-5', 'error')
 
     const errores = document.querySelectorAll('.error');
     if(errores.length === 0) {
         separator.appendChild(messageError);
     }
 }
+
+
 
 function sendEmail (e) {
     e.preventDefault();
@@ -90,20 +93,16 @@ function sendEmail (e) {
     setTimeout(() => {
         spinner.style.display = 'none';
 
-        const textSend = document.createElement('p');
-        textSend.textContent = 'Mail Send, thank you.';
-        textSend.classList.add('text-center', 'border', 'border-success', 'bg-success', 'bg-opacity-10', 'p-2', 'my-10', 'fs-5')
-
-        form.insertBefore(textSend, spinner);
 
         setTimeout(() => {
-            textSend.remove();
 
+            form.submit();
             resetForm();
-
-        }, 5000);
+            
+        }, 1000);
 
     }, 3000);
+
 }
 
 function resetForm (e) {
