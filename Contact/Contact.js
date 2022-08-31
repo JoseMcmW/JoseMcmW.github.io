@@ -12,7 +12,7 @@ const message = document.querySelector('#message');
 const er =/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 eventListeners()
-function eventListeners () {
+function eventListeners() {
     document.addEventListener('DOMContentLoaded', iniciarApp);
 
     //listener inputs
@@ -20,6 +20,8 @@ function eventListeners () {
     lastName.addEventListener('blur', validateForm);
     email.addEventListener('blur', validateForm);
     message.addEventListener('blur', validateForm);
+
+    form.addEventListener('submit', sendEmail)
 }
 
 //Functions
@@ -80,19 +82,24 @@ function showError(textError) {
     }
 }
 
-function sendMail () {
-    e.preventeDefault();
+function sendEmail (e) {
+    e.preventDefault();
 
-//Show spinner
     const spinner = document.querySelector('#spinner');
     spinner.style.display = 'flex';
 
     setTimeout(() => {
-        spinner.setyle.display = 'none';
+        spinner.style.display = 'none';
 
-        const sendMessage = document.createElement('p');
-        sendMessage.textContent = 'El mensaje ha sido enviado';
-        sendMessage.classList.add('')
+        const textSend = document.createElement('p');
+        textSend.textContent = 'Mail Send, thank you.';
+        textSend.classList.add('text-center', 'border', 'border-success', 'bg-success', 'bg-opacity-10', 'p-2', 'my-10', 'fs-5')
+
+        form.insertBefore(textSend, spinner);
+
 
     }, 3000);
 }
+
+
+
