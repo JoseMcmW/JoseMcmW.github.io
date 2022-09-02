@@ -93,43 +93,49 @@
 
 /* Backdground cards */
 .container-card .card:hover .face.face1-1{
-    background: url(./img/expensesList.png);
-    background-size: contain;
+    background: url(../img/expensesList.png);
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     transform: translateY(0px);
 }
 
 .container-card .card:hover .face.face1-2{
-    background: url(./img/counterReact.png);
-    background-size: contain;
+    background: url(../img/counterReact.png);
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     transform: translateY(0px);
 }
 
 .container-card .card:hover .face.face1-3{
-    background: url(./img/calculator.png);
-    background-size: contain;
+    background: url(../img/calculator.png);
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     transform: translateY(0px);
 }
 
 .container-card .card:hover .face.face1-4{
-    background: url(./img/counterJS.png);
-    background-size: contain;
+    background: url(../img/counterJS.png);
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     transform: translateY(0px);
 }
 
 .container-card .card:hover .face.face1-5{
-    background: url(./img/movieSearch.png);
-    background-size: contain;
+    background: url(../img/movieSearch.png);
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     transform: translateY(0px);
 }
 
 .container-card .card:hover .face.face1-6{
-    background: url(./img/landingPage.png);
-    background-size: contain;
+    background: url(../img/landingPage.png);
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     transform: translateY(0px);
 }
