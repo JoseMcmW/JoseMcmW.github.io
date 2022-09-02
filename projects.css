@@ -19,6 +19,10 @@
     color: #DAA520;
 }
 
+.title-transparent {
+    color: transparent;
+}
+
 .container-card .card .face {
     width: 300px;
     height: 200px;
@@ -151,7 +155,7 @@
     transform: translateY(-100px);
 }
 
-.container-card .card:hover .face.face2{
+.container-card .card:hover .face.face2 {
     transform: translateY(0);
 }
 
